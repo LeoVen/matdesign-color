@@ -844,10 +844,121 @@ impl MatColorDeepOrange {
     pub const fn a700() -> u32 { 0xDD2C00 }
 }
 
+/// Brown color and its accents
+pub struct MatColorBrown;
+
+#[rustfmt::skip]
+impl MatColorBrown {
+    /// Brown\[50\] -> 0xEFEBE9
+    /// <div style="padding: 10px; background-color: #EFEBE9"></div>
+    pub const fn c50() -> u32 { 0xEFEBE9 }
+    /// Brown\[100\] -> 0xD7CCC8
+    /// <div style="padding: 10px; background-color: #D7CCC8"></div>
+    pub const fn c100() -> u32 { 0xD7CCC8 }
+    /// Brown\[200\] -> 0xBCAAA4
+    /// <div style="padding: 10px; background-color: #BCAAA4"></div>
+    pub const fn c200() -> u32 { 0xBCAAA4 }
+    /// Brown\[300\] -> 0xA1887F
+    /// <div style="padding: 10px; background-color: #A1887F"></div>
+    pub const fn c300() -> u32 { 0xA1887F }
+    /// Brown\[400\] -> 0x8D6E63
+    /// <div style="padding: 10px; background-color: #8D6E63"></div>
+    pub const fn c400() -> u32 { 0x8D6E63 }
+    /// Brown\[500\] -> 0x795548
+    /// <div style="padding: 10px; background-color: #795548"></div>
+    pub const fn c500() -> u32 { 0x795548 }
+    /// Brown\[600\] -> 0x6D4C41
+    /// <div style="padding: 10px; background-color: #6D4C41"></div>
+    pub const fn c600() -> u32 { 0x6D4C41 }
+    /// Brown\[700\] -> 0x5D4037
+    /// <div style="padding: 10px; background-color: #5D4037"></div>
+    pub const fn c700() -> u32 { 0x5D4037 }
+    /// Brown\[800\] -> 0x4E342E
+    /// <div style="padding: 10px; background-color: #4E342E"></div>
+    pub const fn c800() -> u32 { 0x4E342E }
+    /// Brown\[900\] -> 0x3E2723
+    /// <div style="padding: 10px; background-color: #3E2723"></div>
+    pub const fn c900() -> u32 { 0x3E2723 }
+}
+
+/// Gray color and its accents
+pub struct MatColorGray;
+
+#[rustfmt::skip]
+impl MatColorGray {
+    /// Gray\[50\] -> 0xFAFAFA
+    /// <div style="padding: 10px; background-color: #FAFAFA"></div>
+    pub const fn c50() -> u32 { 0xFAFAFA }
+    /// Gray\[100\] -> 0xF5F5F5
+    /// <div style="padding: 10px; background-color: #F5F5F5"></div>
+    pub const fn c100() -> u32 { 0xF5F5F5 }
+    /// Gray\[200\] -> 0xEEEEEE
+    /// <div style="padding: 10px; background-color: #EEEEEE"></div>
+    pub const fn c200() -> u32 { 0xEEEEEE }
+    /// Gray\[300\] -> 0xE0E0E0
+    /// <div style="padding: 10px; background-color: #E0E0E0"></div>
+    pub const fn c300() -> u32 { 0xE0E0E0 }
+    /// Gray\[400\] -> 0xBDBDBD
+    /// <div style="padding: 10px; background-color: #BDBDBD"></div>
+    pub const fn c400() -> u32 { 0xBDBDBD }
+    /// Gray\[500\] -> 0x9E9E9E
+    /// <div style="padding: 10px; background-color: #9E9E9E"></div>
+    pub const fn c500() -> u32 { 0x9E9E9E }
+    /// Gray\[600\] -> 0x757575
+    /// <div style="padding: 10px; background-color: #757575"></div>
+    pub const fn c600() -> u32 { 0x757575 }
+    /// Gray\[700\] -> 0x616161
+    /// <div style="padding: 10px; background-color: #616161"></div>
+    pub const fn c700() -> u32 { 0x616161 }
+    /// Gray\[800\] -> 0x424242
+    /// <div style="padding: 10px; background-color: #424242"></div>
+    pub const fn c800() -> u32 { 0x424242 }
+    /// Gray\[900\] -> 0x212121
+    /// <div style="padding: 10px; background-color: #212121"></div>
+    pub const fn c900() -> u32 { 0x212121 }
+}
+
+/// Blue Gray color and its accents
+pub struct MatColorBlueGray;
+
+#[rustfmt::skip]
+impl MatColorBlueGray {
+    /// BlueGray\[50\] -> 0xECEFF1
+    /// <div style="padding: 10px; background-color: #ECEFF1"></div>
+    pub const fn c50() -> u32 { 0xECEFF1 }
+    /// BlueGray\[100\] -> 0xCFD8DC
+    /// <div style="padding: 10px; background-color: #CFD8DC"></div>
+    pub const fn c100() -> u32 { 0xCFD8DC }
+    /// BlueGray\[200\] -> 0xB0BEC5
+    /// <div style="padding: 10px; background-color: #B0BEC5"></div>
+    pub const fn c200() -> u32 { 0xB0BEC5 }
+    /// BlueGray\[300\] -> 0x90A4AE
+    /// <div style="padding: 10px; background-color: #90A4AE"></div>
+    pub const fn c300() -> u32 { 0x90A4AE }
+    /// BlueGray\[400\] -> 0x78909C
+    /// <div style="padding: 10px; background-color: #78909C"></div>
+    pub const fn c400() -> u32 { 0x78909C }
+    /// BlueGray\[500\] -> 0x607D8B
+    /// <div style="padding: 10px; background-color: #607D8B"></div>
+    pub const fn c500() -> u32 { 0x607D8B }
+    /// BlueGray\[600\] -> 0x546E7A
+    /// <div style="padding: 10px; background-color: #546E7A"></div>
+    pub const fn c600() -> u32 { 0x546E7A }
+    /// BlueGray\[700\] -> 0x455A64
+    /// <div style="padding: 10px; background-color: #455A64"></div>
+    pub const fn c700() -> u32 { 0x455A64 }
+    /// BlueGray\[800\] -> 0x37474F
+    /// <div style="padding: 10px; background-color: #37474F"></div>
+    pub const fn c800() -> u32 { 0x37474F }
+    /// BlueGray\[900\] -> 0x263238
+    /// <div style="padding: 10px; background-color: #263238"></div>
+    pub const fn c900() -> u32 { 0x263238 }
+}
+
 impl MatColor {
-    /// Creates a color from a [`MatColor`] and an accent [`MatColorAccent`] and
+    /// Creates a color from a [`MatColorVariant`] and an accent [`MatColorAccent`]
     /// checks if its combination is valid. For example, not every color has
-    /// every type of accent. Prefer using the `const fn` variants.
+    /// every type of accent. Prefer using the `const fn` variants if you can.
     pub fn new(_color: MatColorVariant, _accent: MatColorAccent) -> Result<u32, String> {
         todo!()
     }
@@ -916,11 +1027,25 @@ impl MatColor {
     pub const fn deep_orange() -> MatColorDeepOrange {
         MatColorDeepOrange
     }
+    /// Access to [`MatColorBrown`]
+    pub const fn brown() -> MatColorBrown {
+        MatColorBrown
+    }
+    /// Access to [`MatColorGray`]
+    pub const fn gray() -> MatColorGray {
+        MatColorGray
+    }
+    /// Access to [`MatColorBlueGray`]
+    pub const fn blue_gray() -> MatColorBlueGray {
+        MatColorBlueGray
+    }
     /// Black -> 0x000000
+    /// <div style="padding: 10px; background-color: #000000"></div>
     pub const fn black() -> u32 {
         0x000000
     }
     /// White -> 0xFFFFFF
+    /// <div style="padding: 10px; background-color: #FFFFFF"></div>
     pub const fn white() -> u32 {
         0xFFFFFF
     }
