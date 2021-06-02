@@ -39,10 +39,35 @@
 //!
 //! ## Examples
 //!
+//! You may use the `const fn` through [`MatColor`] or access them through a specific color.
 //! ```
-//! use matdesign_color::MatColor;
+//! use matdesign_color::{MatColor, MatColorRed};
 //!
-//! let color = MatColor.red().c300();
+//! let red1: u32 = MatColor.red().c300();
+//! let brown: u32 = MatColor.brown().c900();
+//! let black: u32 = MatColor.black();
+//!
+//! let red2 = MatColorRed.c300();
+//! assert_eq!(red1, red2);
+//! ```
+//!
+//! Or you may use [`MatColor::new`] to create colors on the fly:
+//! ```
+//! use matdesign_color::{MatColor, MatColorVariant, MatColorAccent};
+//!
+//! let orange: Option<u32> = MatColor::new(MatColorVariant::Orange, MatColorAccent::A200);
+//! assert!(orange.is_some());
+//!
+//! let no_brown: Option<u32> = MatColor::new(MatColorVariant::Brown, MatColorAccent::A200);
+//! assert!(no_brown.is_none());
+//! ```
+//!
+//! You may also use global constant arrays and index them using an accent.
+//! ```
+//! use matdesign_color::{MAT_COLORS_RED, MatColor, MatColorAccent};
+//!
+//! let red: u32 = MAT_COLORS_RED[MatColorAccent::A700 as usize];
+//! assert_eq!(red, MatColor.red().a700());
 //! ```
 
 #[cfg(test)]
@@ -1241,6 +1266,20 @@ impl MatColor {
     pub const fn white(&self) -> u32 {
         0xFFFFFF
     }
+    /// Checks if the specifiec color variant has all the accents.
+    ///
+    /// Returns false for [`MatColorVariant::Black`], [`MatColorVariant::White`],
+    /// [`MatColorVariant::Brown`], [`MatColorVariant::Gray`], [`MatColorVariant::BlueGray`]
+    pub fn has_all_accents(var: MatColorVariant) -> bool {
+        match var {
+            MatColorVariant::Black
+            | MatColorVariant::White
+            | MatColorVariant::Brown
+            | MatColorVariant::Gray
+            | MatColorVariant::BlueGray => false,
+            _ => true,
+        }
+    }
 }
 
 #[cfg(test)]
@@ -1252,14 +1291,44 @@ mod test {
     #[test]
     fn it_works() {
         let all_colors = MatColorVariant::iter()
-            .flat_map(|var| MatColorAccent::iter().map(move |acc| (MatColor::new(var, acc), var, acc)))
+            .flat_map(|var| {
+                MatColorAccent::iter().map(move |acc| (MatColor::new(var, acc), var, acc))
+            })
             .filter(|tup| tup.0.is_some())
-            .filter(|tup| !((tup.1 == MatColorVariant::Black || tup.1 == MatColorVariant::White) && tup.2 != MatColorAccent::C50))
+            .filter(|tup| {
+                !((tup.1 == MatColorVariant::Black || tup.1 == MatColorVariant::White)
+                    && tup.2 != MatColorAccent::C50)
+            })
             .map(|tup| (tup.0.unwrap(), tup.1, tup.2))
             .collect::<HashSet<(u32, MatColorVariant, MatColorAccent)>>();
 
         assert_eq!(256, all_colors.len());
 
         // TODO test for each color variant
+    }
+
+    #[test]
+    fn const_arrays() {
+        let all = MatColorVariant::iter()
+            .filter(|var| !(*var == MatColorVariant::Black || *var == MatColorVariant::White))
+            .map(|var| {
+                MatColorAccent::iter()
+                    .map(move |acc| {
+                        if let Some(color) = MatColor::new(var, acc) {
+                            match MatColor::has_all_accents(var) {
+                                true => color == MAT_COLORS_ACCENT[var as usize][acc as usize],
+                                false => {
+                                    color == MAT_COLORS_NO_ACCENT[var as usize - 16][acc as usize]
+                                }
+                            }
+                        } else {
+                            true
+                        }
+                    })
+                    .all(|t| t)
+            })
+            .all(|t| t);
+
+        assert!(all);
     }
 }
