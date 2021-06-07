@@ -3,13 +3,13 @@
 <div align="center">
     <p>Material Design Color Palettes for Rust</p>
     <p>
-        <a src="https://github.com/LeoVen/matdesign-color">
+        <a href="https://github.com/LeoVen/matdesign-color">
             <img src="https://img.shields.io/badge/Github-matdesign--color-blue?logo=github" />
         </a>
-        <a src="https://crates.io/crates/matdesign-color">
+        <a href="https://crates.io/crates/matdesign-color">
             <img src="https://img.shields.io/crates/v/matdesign-color.svg" />
         </a>
-        <a src="https://docs.rs/matdesign-color/0.1.1/matdesign_color/">
+        <a href="https://docs.rs/matdesign-color/0.1.1/matdesign_color/">
             <img src="https://img.shields.io/badge/docs.rs-matdesign--color-blue" />
         </a>
     </p>
