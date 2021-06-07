@@ -4,7 +4,7 @@
     <p>Material Design Color Palettes for Rust</p>
     <p>
         <a href="https://github.com/LeoVen/matdesign-color">
-            <img src="https://img.shields.io/badge/Github-matdesign--color-blue?logo=github" />
+            <img src="https://img.shields.io/badge/Github-matdesign--color-white?logo=github" />
         </a>
         <a href="https://crates.io/crates/matdesign-color">
             <img src="https://img.shields.io/crates/v/matdesign-color.svg" />
