@@ -9,7 +9,7 @@
         <a href="https://crates.io/crates/matdesign-color">
             <img src="https://img.shields.io/crates/v/matdesign-color.svg" />
         </a>
-        <a href="https://docs.rs/matdesign-color/0.1.1/matdesign_color/">
+        <a href="https://docs.rs/matdesign-color/0.1.2/matdesign_color/">
             <img src="https://img.shields.io/badge/docs.rs-matdesign--color-blue" />
         </a>
     </p>
@@ -20,7 +20,7 @@
 Include this line in your `cargo.toml`
 
 ```toml
-matdesign-color = "0.1.1"
+matdesign-color = "0.1.2"
 ```
 
 ## Examples
